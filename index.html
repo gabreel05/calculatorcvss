@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div
+      class="main"
+      data-vscode-context='{"webviewSection": "main", "mouseCount": 4}'
+    >
+      <h1>CVSS Informations</h1>
+      <hr width="100%" />
+      <div class="body">
+        <h3>
+          The CVSS base score is:
+          ${vuln.cve.metrics.cvssMetricV30[0].cvssData.baseScore}
+        </h3>
+        <h3>
+          The CVSS severity is:
+          ${vuln.cve.metrics.cvssMetricV30[0].cvssData.baseSeverity}
+        </h3>
+        <h3>
+          The exploitability score is:
+          ${vuln.cve.metrics.cvssMetricV30[0].exploitabilityScore}
+        </h3>
+        <h3>
+          The impact score is: ${vuln.cve.metrics.cvssMetricV30[0].impactScore}
+        </h3>
+      </div>
+      <hr width="100%" />
+      <h1>CVE informations</h1>
+      <div class="body">
+        <h3>The CVE ID is: ${vuln.cve.id}</h3>
+        <h3>
+          The description is: ${vuln.cve.description.descriptionData[0].value}
+        </h3>
+        <h3>The published date is: ${vuln.publishedDate}</h3>
+        <h3>The last modified date is: ${vuln.lastModifiedDate}</h3>
+      </div>
+    </div>
+  </body>
+  <style>
+    .main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+    }
+  </style>
+</html>
